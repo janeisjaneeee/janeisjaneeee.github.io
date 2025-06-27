@@ -38,23 +38,26 @@
       <p>Redesigned onboarding UX for TurboTax</p>
     </div>
   </section>
-  <script>
-  const entries = document.querySelectorAll('.entry');
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const entries = document.querySelectorAll('.entry');
 
-  function activateOnScroll() {
-    const triggerBottom = window.innerHeight / 1.2;
-    entries.forEach(entry => {
-      const rect = entry.getBoundingClientRect();
-      if (rect.top < triggerBottom && rect.bottom > 0) {
-        entry.classList.add('active');
-      } else {
-        entry.classList.remove('active');
-      }
-    });
-  }
+    function activateOnScroll() {
+      const triggerBottom = window.innerHeight / 1.2;
+      entries.forEach(entry => {
+        const rect = entry.getBoundingClientRect();
+        if (rect.top < triggerBottom && rect.bottom > 0) {
+          entry.classList.add('active');
+        } else {
+          entry.classList.remove('active');
+        }
+      });
+    }
 
-  window.addEventListener('scroll', activateOnScroll);
-  window.addEventListener('load', activateOnScroll);
+    window.addEventListener('scroll', activateOnScroll);
+    activateOnScroll(); // trigger once on load
+  });
 </script>
+
 </body>
 </html>
