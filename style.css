@@ -138,10 +138,12 @@ h2 {
 .segment {
   flex: 1;
   margin: 4px 0;
-  background: #222;
+  background: transparent;
+  border: 2px solid #555;   /* visible outline when not active */
   border-radius: 3px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
+
 
 .segment.active {
   background: #32cd32; /* Lime green */
