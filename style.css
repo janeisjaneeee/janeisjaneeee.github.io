@@ -1,3 +1,4 @@
+/* General styles */
 body {
   margin: 0;
   font-family: sans-serif;
@@ -5,6 +6,15 @@ body {
   color: white;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --fill-height: 0%;
+}
+
+/* Hero section */
 .hero {
   height: 100vh;
   background: url('https://images.unsplash.com/photo-1607082349560-09733d4fe4f5') no-repeat center center/cover;
@@ -32,8 +42,10 @@ h1 {
 
 .description {
   font-size: 1rem;
+  color: #ccc;
 }
 
+/* Section layout */
 section {
   padding: 3rem 2rem;
 }
@@ -44,69 +56,29 @@ h2 {
   font-size: 2rem;
 }
 
-.experience {
-  background-color: #121233;
-}
-
+/* Timeline layout */
 .timeline-wrapper {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
-}
-
-.battery-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.battery-cap {
-  width: 24px;
-  height: 10px;
-  background: #888;
-  border-radius: 4px;
-  margin-bottom: 5px;
-}
-
-.battery-body {
-  width: 30px;
-  height: 100px;
-  border: 3px solid #888;
-  border-radius: 6px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 4px;
-  background: transparent;
-}
-
-.segment {
-  flex: 1;
-  margin: 4px 0;
-  border: 2px solid #555;
-  background: transparent;
-  border-radius: 3px;
-  transition: background-color 0.3s ease;
-}
-
-.segment.active {
-  background-color: #32cd32;
+  margin-top: 2rem;
 }
 
 .timeline {
-  flex: 1;
-  border-left: 2px solid #888;
+  position: relative;
   padding-left: 1rem;
+  border-left: 2px solid #888;
+  flex: 1;
 }
 
+/* Timeline entry */
 .entry {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
   opacity: 0.5;
   transform: translateY(20px);
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .entry.active {
@@ -117,6 +89,7 @@ h2 {
 
 .date {
   font-size: 0.9rem;
+  font-weight: 600;
   color: #aaa;
   width: 140px;
   flex-shrink: 0;
@@ -127,14 +100,56 @@ h2 {
   flex: 1;
 }
 
+/* Battery design */
+.battery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
+.battery-cap {
+  width: 24px;
+  height: 10px;
+  background-color: #888;
+  border-radius: 3px;
+  margin-bottom: 4px;
+}
+
+.battery-body {
+  width: 30px;
+  height: 100px;
+  border: 2px solid #888;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 4px;
+}
+
+.battery-segment {
+  flex: 1;
+  margin: 4px 0;
+  border: 2px solid #555;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.battery-segment.active {
+  background-color: #32cd32; /* Lime green */
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
   .timeline-wrapper {
     flex-direction: column;
+    align-items: flex-start;
   }
 
-  .battery-icon {
+  .battery {
     flex-direction: row;
-    align-items: center;
     margin-bottom: 1rem;
   }
 
@@ -145,19 +160,20 @@ h2 {
     padding: 4px;
   }
 
-  .segment {
+  .battery-segment {
     margin: 0 4px;
   }
 
   .battery-cap {
     width: 10px;
-    height: 30px;
+    height: 24px;
     margin-right: 8px;
   }
 
   .date {
-    text-align: left;
     width: 100%;
+    text-align: left;
+    margin-bottom: 0.3rem;
   }
 
   .entry {
