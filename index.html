@@ -47,19 +47,30 @@
     const entries = document.querySelectorAll('.entry');
 
     function activateOnScroll() {
-      const triggerBottom = window.innerHeight / 1.2;
+      const triggerBottom = window.innerHeight * 0.9;
+
       entries.forEach(entry => {
         const rect = entry.getBoundingClientRect();
-        if (rect.top < triggerBottom && rect.bottom > 0) {
+
+        if (rect.top < triggerBottom && rect.bottom > 100) {
           entry.classList.add('active');
         } else {
           entry.classList.remove('active');
         }
       });
+
+      // Progress bar logic
+      const section = document.querySelector('.timeline-wrapper');
+      const scrollY = window.scrollY + window.innerHeight;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      let percent = ((scrollY - sectionTop) / sectionHeight) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+      document.documentElement.style.setProperty('--fill-height', percent + '%');
     }
 
     window.addEventListener('scroll', activateOnScroll);
-    activateOnScroll(); // trigger once on load
+    activateOnScroll();
   });
 </script>
 
