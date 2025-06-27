@@ -101,17 +101,13 @@
         }
 
         .section-title {
-            font-size: 3rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 1rem;
-            display: inline-block;
-            width: 100%;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            color: #888;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         /* Timeline layout */
@@ -210,8 +206,8 @@
             align-items: center;
             flex-shrink: 0;
             position: sticky;
-            top: 50vh;
-            transform: translateY(-50%);
+            top: 2rem;
+            height: fit-content;
         }
 
         .battery-label {
@@ -233,7 +229,7 @@
 
         .battery-body {
             width: 36px;
-            height: 120px;
+            min-height: 200px; /* Fallback minimum height */
             border: 3px solid #555;
             border-radius: 8px;
             display: flex;
@@ -253,6 +249,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            min-height: 20px; /* Minimum segment height */
         }
 
         .battery-segment::before {
@@ -399,22 +396,21 @@
             <div class="battery">
                 <div class="battery-label">Progress</div>
                 <div class="battery-cap"></div>
-                <div class="battery-body">
-                    <div class="battery-segment segment-1"></div>
-                    <div class="battery-segment segment-2"></div>
+                <div class="battery-body" id="batteryBody">
+                    <!-- Battery segments will be dynamically generated -->
                 </div>
             </div>
 
             <!-- Timeline -->
             <div class="timeline">
-                <div class="entry" data-segment="1">
+                <div class="entry">
                     <div class="date">Oct 2023 – May 2024</div>
                     <div class="content">
                         <h3>BPM Intern @ Microsoft</h3>
                         <p>AI Adoption | Sales Strategy Enablement</p>
                     </div>
                 </div>
-                <div class="entry" data-segment="2">
+                <div class="entry">
                     <div class="date">Jan 2025 – Present</div>
                     <div class="content">
                         <h3>Fund and Portfolio Services @ CIBC Mellon</h3>
@@ -426,12 +422,34 @@
     </section>
 
     <script>
-        // Smooth scroll activation
-        const entries = document.querySelectorAll('.entry');
-        const batterySegments = document.querySelectorAll('.battery-segment');
-        const scrollIndicator = document.querySelector('.scroll-indicator');
+        // Dynamic battery setup
+        function initializeBattery() {
+            const entries = document.querySelectorAll('.entry');
+            const batteryBody = document.getElementById('batteryBody');
+            const timeline = document.querySelector('.timeline');
+            
+            // Clear existing segments
+            batteryBody.innerHTML = '';
+            
+            // Create segments based on number of entries
+            entries.forEach((entry, index) => {
+                const segment = document.createElement('div');
+                segment.className = `battery-segment segment-${index + 1}`;
+                segment.dataset.entryIndex = index;
+                batteryBody.appendChild(segment);
+            });
+            
+            // Set battery height to match timeline height
+            const timelineHeight = timeline.offsetHeight;
+            const batteryMinHeight = Math.max(timelineHeight * 0.8, 200); // 80% of timeline height, minimum 200px
+            batteryBody.style.height = `${batteryMinHeight}px`;
+        }
 
+        // Smooth scroll activation
         function updateTimelineProgress() {
+            const entries = document.querySelectorAll('.entry');
+            const batterySegments = document.querySelectorAll('.battery-segment');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
             const triggerBottom = window.innerHeight * 0.75;
             
             entries.forEach((entry, index) => {
@@ -442,9 +460,8 @@
                 entry.classList.toggle('active', isVisible);
                 
                 // Toggle corresponding battery segment
-                const segmentIndex = parseInt(entry.dataset.segment) - 1;
-                if (batterySegments[segmentIndex]) {
-                    batterySegments[segmentIndex].classList.toggle('active', isVisible);
+                if (batterySegments[index]) {
+                    batterySegments[index].classList.toggle('active', isVisible);
                 }
             });
 
@@ -456,13 +473,26 @@
             }
         }
 
+        // Resize handler to maintain battery-timeline proportion
+        function handleResize() {
+            const timeline = document.querySelector('.timeline');
+            const batteryBody = document.getElementById('batteryBody');
+            
+            if (timeline && batteryBody) {
+                const timelineHeight = timeline.offsetHeight;
+                const batteryMinHeight = Math.max(timelineHeight * 0.8, 200);
+                batteryBody.style.height = `${batteryMinHeight}px`;
+            }
+        }
+
         // Event listeners
         window.addEventListener('scroll', updateTimelineProgress);
-        window.addEventListener('load', updateTimelineProgress);
+        window.addEventListener('load', () => {
+            initializeBattery();
+            updateTimelineProgress();
+        });
+        window.addEventListener('resize', handleResize);
         
-        // Initial check
-        updateTimelineProgress();
-
         // Smooth scrolling for better UX
         document.documentElement.style.scrollBehavior = 'smooth';
     </script>
