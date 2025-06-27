@@ -48,54 +48,12 @@ h2 {
   padding: 3rem 2rem;
 }
 
-.timeline {
-  position: relative;
-  margin-left: 1rem;
-  padding-left: 1rem;
-  border-left: 2px solid #888;
-}
-
-.entry {
-  margin-bottom: 2rem;
-  padding-left: 1rem;
-  transition: all 0.3s ease;
-  opacity: 0.5;
-  transform: translateY(20px);
-}
-
-.entry.active {
-  color: #fff;
-  font-weight: bold;
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .timeline-wrapper {
   position: relative;
   display: flex;
 }
 
-.progress-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background-color: #444;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.progress-bar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #32cd32; /* lime green for battery look */
-  height: var(--fill-height);
-  transition: height 0.3s ease;
-}
 
 .timeline {
   position: relative;
@@ -109,6 +67,7 @@ h2 {
   display: flex;
   gap: 1.5rem;
   margin-bottom: 2rem;
+  padding-left: 1rem;
   transition: all 0.4s ease;
   opacity: 0.5;
   transform: translateY(20px);
@@ -117,6 +76,7 @@ h2 {
 .entry.active {
   opacity: 1;
   transform: translateY(0);
+  font-weight: bold;
 }
 
 .date {
@@ -132,6 +92,10 @@ h2 {
   flex: 1;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
   .entry {
     flex-direction: column;
@@ -144,64 +108,41 @@ h2 {
   }
 }
 
-.battery-bar-container {
+.battery-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 2rem;
 }
 
 .battery-cap {
-  width: 24px;
+  width: 30px;
   height: 10px;
-  background-color: #666;
-  border-radius: 3px;
-  margin-bottom: 6px;
+  background: #888;
+  border-radius: 4px;
+  margin-bottom: 5px;
 }
 
-.battery-bar {
+.battery-body {
+  width: 40px;
+  height: 120px;
+  border: 3px solid #888;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 150px;
-  width: 24px;
-  background-color: #222;
-  border-radius: 6px;
   padding: 4px;
-  box-sizing: border-box;
+  background: transparent;
 }
 
-.battery-segment {
+.segment {
   flex: 1;
-  margin: 2px 0;
-  background-color: #444;
-  border-radius: 4px;
+  margin: 4px 0;
+  background: #222;
+  border-radius: 3px;
   transition: background-color 0.3s ease;
 }
 
-.battery-segment.active {
-  background-color: #32cd32;
+.segment.active {
+  background: #32cd32; /* Lime green */
 }
-
-.battery-labels {
-  margin-top: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.label {
-  text-align: center;
-  font-size: 0.8rem;
-  color: #aaa;
-  line-height: 1.1;
-}
-
-.year {
-  font-weight: bold;
-}
-
-.subyear {
-  font-size: 0.75rem;
-}
-
