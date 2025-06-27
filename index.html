@@ -62,21 +62,27 @@
 
 
 <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const entries = document.querySelectorAll('.entry');
+ const entries = document.querySelectorAll('.entry');
+const segment1 = document.querySelector('.segment-1');
+const segment2 = document.querySelector('.segment-2');
 
-    function activateOnScroll() {
-      const triggerBottom = window.innerHeight * 0.9;
+function activateOnScroll() {
+  const triggerBottom = window.innerHeight / 1.3;
+  entries.forEach((entry, index) => {
+    const rect = entry.getBoundingClientRect();
+    const isVisible = rect.top < triggerBottom && rect.bottom > 0;
 
-      entries.forEach(entry => {
-        const rect = entry.getBoundingClientRect();
+    entry.classList.toggle('active', isVisible);
 
-        if (rect.top < triggerBottom && rect.bottom > 100) {
-          entry.classList.add('active');
-        } else {
-          entry.classList.remove('active');
-        }
-      });
+    // Highlight segments based on index
+    if (index === 0) segment1.classList.toggle('active', isVisible);
+    if (index === 1) segment2.classList.toggle('active', isVisible);
+  });
+}
+
+window.addEventListener('scroll', activateOnScroll);
+window.addEventListener('load', activateOnScroll);
+
 
       // Progress bar logic
       const section = document.querySelector('.timeline-wrapper');
