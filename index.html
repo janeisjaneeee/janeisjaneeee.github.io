@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html>More actions
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane Zhu - Enhanced Battery Portfolio</title>
+    <title>Jane Zhu - Product Portfolio</title>
     <style>
         /* General styles */
         * {
@@ -17,57 +17,9 @@
             background-color: #0d0d2b;
             color: white;
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden;Add commentMore actions
         }
-
-        /* Navigation */
-        .nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(13, 13, 43, 0.9);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transform: translateY(-100%);
-            transition: all 0.3s ease;
-        }
-
-        .nav.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 300;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .nav a:hover {
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
-        }
-
-        /* Hero section */
+        /* Hero section */Add commentMore actions
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%),
@@ -155,7 +107,7 @@
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 2px;
-            display: block;
+            display: block;More actions
         }
 
         /* Timeline layout */
@@ -172,8 +124,7 @@
             border-left: 3px solid #444;
             flex: 1;
         }
-
-        /* Timeline entry */
+         /* Timeline entry */Add commentMore actions
         .entry {
             display: flex;
             gap: 2rem;
@@ -237,7 +188,7 @@
             font-size: 1rem;
         }
 
-        /* Enhanced Cute & Techy Battery Design */
+        /* Battery design */
         .battery {
             display: flex;
             flex-direction: column;
@@ -249,14 +200,11 @@
         }
 
         .battery-label {
-            font-size: 0.9rem;
-            color: #00ff88;
+            font-size: 0.8rem;
+            color: #888;
             margin-bottom: 1rem;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
         }
 
         .battery-container {
@@ -264,363 +212,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            filter: drop-shadow(0 0 20px rgba(0, 255, 136, 0.3));
         }
 
-        /* Cute kawaii face */
-        .battery-face {
-            position: absolute;
-            top: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .battery-eyes {
-            display: flex;
-            gap: 6px;
-            margin-bottom: 4px;
-            justify-content: center;
-        }
-
-        .eye {
-            width: 4px;
-            height: 4px;
-            background: #2a2a2a;
-            border-radius: 50%;
-            animation: blink 4s infinite;
-        }
-
-        .battery-mouth {
-            width: 8px;
-            height: 4px;
-            border: 1px solid #2a2a2a;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-            margin: 0 auto;
-            transition: all 0.3s ease;
-        }
-
-        .battery-face.happy .battery-mouth {
-            background: #2a2a2a;
-            transform: scaleY(0.5);
-        }
-
-        @keyframes blink {
-            0%, 96%, 100% { transform: scaleY(1); }
-            98% { transform: scaleY(0.1); }
-        }
-
-        /* Neon-style battery cap */
         .battery-cap {
-            width: 24px;
-            height: 10px;
-            background: linear-gradient(135deg, #00ff88, #00ccff);
-            border-radius: 4px 4px 0 0;
+            width: 20px;
+            height: 8px;
+            background: #7a7a7a;
+            border-radius: 3px 3px 0 0;
             margin-bottom: 0;
             z-index: 2;
-            box-shadow: 
-                0 0 10px rgba(0, 255, 136, 0.5),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            position: relative;
         }
 
-        .battery-cap::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            left: 4px;
-            right: 4px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 1px;
-        }
-
-        /* Enhanced battery body */
         .battery-body {
-            width: 40px;
+            width: 32px;
             min-height: 200px;
-            border: 3px solid #00ff88;
-            border-radius: 6px;
+            border: 2px solid #7a7a7a;
+            border-radius: 4px;
             display: flex;
             flex-direction: column;
-            padding: 4px;
-            background: 
-                linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%),
-                #1a1a2e;
+            padding: 3px;
+            background: #f0f0f0;
             gap: 2px;
             position: relative;
-            box-shadow: 
-                0 0 20px rgba(0, 255, 136, 0.4),
-                inset 0 0 20px rgba(0, 255, 136, 0.1);
-            overflow: hidden;
         }
 
-        /* Digital display overlay */
-        .battery-display {
-            position: absolute;
-            top: 50%;
-            right: -80px;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.9);
-            border: 2px solid #00ff88;
-            border-radius: 8px;
-            padding: 12px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.8rem;
-            color: #00ff88;
-            text-shadow: 0 0 5px rgba(0, 255, 136, 0.8);
-            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
-            white-space: nowrap;
-        }
-
-        .battery-percentage {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 4px;
-        }
-
-        .battery-status {
-            font-size: 0.7rem;
-            opacity: 0.8;
-        }
-
-        /* Enhanced battery segments with gradient */
         .battery-segment {
             flex: 1;
-            border-radius: 3px;
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            background: #e0e0e0;
+            border: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             min-height: 20px;
         }
 
-        .battery-segment::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: left 0.6s ease;
-        }
-
         .battery-segment.active {
-            background: linear-gradient(135deg, #00ff88, #00ccff, #667eea);
-            border-color: #00ff88;
-            box-shadow: 
-                0 0 10px rgba(0, 255, 136, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            animation: energyFlow 2s ease-in-out infinite;
+            background: #4ade80;
+            box-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
         }
-
-        .battery-segment.active::before {
-            left: 100%;
-        }
-
-        @keyframes energyFlow {
-            0%, 100% { 
-                filter: brightness(1) saturate(1);
-            }
-            50% { 
-                filter: brightness(1.2) saturate(1.3);
-            }
-        }
-
-        /* Energy particles */
-        .energy-particles {
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #00ff88;
-            border-radius: 50%;
-            animation: floatUp 2s ease-in-out infinite;
-            box-shadow: 0 0 6px rgba(0, 255, 136, 0.8);
-        }
-
-        .particle:nth-child(1) { left: -10px; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 0px; animation-delay: 0.3s; }
-        .particle:nth-child(3) { left: 10px; animation-delay: 0.6s; }
-        .particle:nth-child(4) { left: -5px; animation-delay: 0.9s; }
-        .particle:nth-child(5) { left: 5px; animation-delay: 1.2s; }
-
-        @keyframes floatUp {
-            0% {
-                opacity: 0;
-                transform: translateY(0px) scale(0);
-            }
-            20% {
-                opacity: 1;
-                transform: translateY(-5px) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-25px) scale(0);
-            }
-        }
-
-        /* Charging cable visual */
-        .charging-cable {
-            position: absolute;
-            bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 25px;
-            background: linear-gradient(180deg, #00ff88, transparent);
-            border-radius: 1px;
-        }
-
-        .charging-cable::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: -3px;
-            width: 8px;
-            height: 8px;
-            background: #00ff88;
-            border-radius: 2px;
-            box-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
-        }
-
-        /* Portfolio and Case Studies sections remain the same */
-        .portfolio-section, .case-studies-section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-top: 1px solid #333;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .portfolio-item, .case-study-item {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(30px);
-            overflow: hidden;
-        }
-
-        .item-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .item-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .item-image img,
-        .case-study-item:hover .item-image img {
-            transform: scale(1.05);
-        }
-
-        .item-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(13, 13, 43, 0.3);
-            z-index: 1;
-        }
-
-        .item-content {
-            padding: 2rem;
-        }
-
-        .portfolio-item.visible, .case-study-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .portfolio-item:hover, .case-study-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(102, 126, 234, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .item-title {
-            color: white;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
-        }
-
-        .item-description {
-            color: #b0b0b0;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .item-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            background: rgba(102, 126, 234, 0.2);
-            color: #667eea;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 400;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        .item-link {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 400;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .item-link:hover {
-            color: #a8edea;
-            transform: translateX(5px);
-        }
-
-        /* Scroll indicator */
+        /* Scroll indicator */Add commentMore actions
         .scroll-indicator {
             position: fixed;
             bottom: 2rem;
@@ -644,23 +275,6 @@
             }
         }
 
-        /* Additional animations */
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
-            }
-        }
-
-        .entry.active::before {
-            animation: pulse 2s infinite;
-        }
-
         /* Mobile responsive */
         @media (max-width: 768px) {
             h1 {
@@ -671,13 +285,7 @@
                 padding: 2rem;
                 margin: 1rem;
             }
-
-            .nav ul {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .timeline-wrapper {
+            .timeline-wrapper {Add commentMore actions
                 flex-direction: column;
                 gap: 2rem;
             }
@@ -696,31 +304,20 @@
             }
 
             .battery-body {
-                height: 50px;
-                width: 180px;
+                height: 40px;
+                width: 150px;
                 flex-direction: row;
             }
 
-            .battery-display {
-                position: static;
-                transform: none;
-                margin-left: 1rem;
-            }
-
             .battery-segment {
-                margin: 0 2px;
+                margin: 0 3px;
             }
 
             .battery-cap {
-                width: 16px;
-                height: 36px;
-                margin-right: 4px;
+                width: 12px;
+                height: 28px;
+                margin-right: 8px;
                 margin-bottom: 0;
-            }
-
-            .battery-face {
-                top: 50%;
-                transform: translate(-50%, -50%);
             }
 
             .entry {
@@ -732,30 +329,30 @@
                 width: 100%;
                 text-align: left;
             }
-
-            .experience, .portfolio-section, .case-studies-section {
+            .experience {
                 padding: 3rem 1rem;
             }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
+            /* Additional animations */Add commentMore actions
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
             }
+            70% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0);
+            }
+        }
+
+        .entry.active::before {
+            animation: pulse 2s infinite;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#case-studies">Case Studies</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero" id="hero">
-        <div class="overlay">
+    <section class="hero">
+        <div class="overlay">Add commentMore actions
             <h1>Jane Zhu</h1>
             <p class="subtitle">Artist · Designer · Developer</p>
             <p class="description">Math & Finance Student @ University of Waterloo</p>
@@ -765,50 +362,24 @@
         </div>
     </section>
 
-    <section class="experience" id="experience">
-        <h2 class="section-title">Experience</h2>
+    <section class="experience">
+         <h2 class="section-title">Experience</h2>Add commentMore actions
         <div class="timeline-wrapper">
-            <!-- Enhanced Cute & Techy Battery -->
+            <!-- Battery indicator -->
             <div class="battery">
-                <div class="battery-label">LEARNING++</div>
+                <div class="battery-label">Progress</div>
                 <div class="battery-container">
-                    <!-- Energy particles -->
-                    <div class="energy-particles">
-                        <div class="particle"></div>
-                        <div class="particle"></div>
-                        <div class="particle"></div>
-                        <div class="particle"></div>
-                        <div class="particle"></div>
-                    </div>
-                    
                     <div class="battery-cap"></div>
                     <div class="battery-body" id="batteryBody">
-                        <!-- Kawaii face -->
-                        <div class="battery-face" id="batteryFace">
-                            <div class="battery-eyes">
-                                <div class="eye"></div>
-                                <div class="eye"></div>
-                            </div>
-                            <div class="battery-mouth"></div>
-                        </div>
                         <!-- Battery segments will be dynamically generated -->
                     </div>
-                    
-                    <!-- Digital display -->
-                    <div class="battery-display" id="batteryDisplay">
-                        <div class="battery-percentage" id="batteryPercentage">0%</div>
-                        <div class="battery-status" id="batteryStatus">INITIALIZING...</div>
-                    </div>
-                    
-                    <!-- Charging cable -->
-                    <div class="charging-cable"></div>
                 </div>
             </div>
 
             <!-- Timeline -->
             <div class="timeline">
                 <div class="entry">
-                    <div class="date">JAN 2025</div>
+                    <div class="date">JAN 2025 </div>
                     <div class="content">
                         <h3>BPM Intern @ Microsoft</h3>
                         <p>AI Adoption | Sales Strategy Enablement</p>
@@ -824,87 +395,83 @@
             </div>
         </div>
     </section>
+   <script>Add commentMore actions
+        // Dynamic battery setup
+        function initializeBattery() {
+            const entries = document.querySelectorAll('.entry');
+            const batteryBody = document.getElementById('batteryBody');
+            const timeline = document.querySelector('.timeline');
 
-    <!-- Portfolio Section -->
-    <section class="portfolio-section" id="portfolio">
-        <h2 class="section-title">Portfolio</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="item-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Dashboard Preview">
-                </div>
-                <div class="item-content">
-                    <div class="item-title">Interactive Data Dashboard</div>
-                    <div class="item-description">
-                        A comprehensive analytics dashboard for financial data visualization with real-time updates and customizable metrics for investment portfolio tracking.
-                    </div>
-                    <div class="item-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">D3.js</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Finance</span>
-                    </div>
-                    <a href="#" class="item-link">View Project →</a>
-                </div>
-            </div>
+            // Clear existing segments
+            batteryBody.innerHTML = '';
 
-            <div class="portfolio-item">
-                <div class="item-image">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile App Design">
-                </div>
-                <div class="item-content">
-                    <div class="item-title">Mobile Trading App UI</div>
-                    <div class="item-description">
-                        User-centered design for a cryptocurrency trading application focusing on accessibility and intuitive navigation for both novice and expert traders.
-                    </div>
-                    <div class="item-tags">
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">Figma</span>
-                        <span class="tag">Prototyping</span>
-                        <span class="tag">Mobile</span>
-                    </div>
-                    <a href="#" class="item-link">View Design →</a>
-                </div>
-            </div>
+            // Create segments based on number of entries
+            entries.forEach((entry, index) => {
+                const segment = document.createElement('div');
+                segment.className = `battery-segment segment-${index + 1}`;
+                segment.dataset.entryIndex = index;
+                batteryBody.appendChild(segment);
+            });
 
-            <div class="portfolio-item">
-                <div class="item-image">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Risk Analysis Tool">
-                </div>
-                <div class="item-content">
-                    <div class="item-title">Risk Analysis Tool</div>
-                    <div class="item-description">
-                        Mathematical modeling application for portfolio risk assessment using Monte Carlo simulations and Value at Risk calculations.
-                    </div>
-                    <div class="item-tags">
-                        <span class="tag">Mathematics</span>
-                        <span class="tag">Statistics</span>
-                        <span class="tag">Monte Carlo</span>
-                        <span class="tag">Risk Management</span>
-                    </div>
-                    <a href="#" class="item-link">Explore Tool →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+            // Set battery height to match timeline height
+            const timelineHeight = timeline.offsetHeight;
+            const batteryMinHeight = Math.max(timelineHeight * 0.8, 200); // 80% of timeline height, minimum 200px
+                batteryBody.style.height = `${batteryMinHeight}px`;Add commentMore actions
+        }
 
-    <!-- Case Studies Section -->
-    <section class="case-studies-section" id="case-studies">
-        <h2 class="section-title">Case Studies & Analysis</h2>
-        <div class="portfolio-grid">
-            <div class="case-study-item">
-                <div class="item-image">
-                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="AI Strategy Analysis">
-                </div>
-                <div class="item-content">
-                    <div class="item-title">AI Adoption Strategy at Microsoft</div>
-                    <div class="item-description">
-                        Analysis of internal AI tool adoption patterns and strategic recommendations for improving sales team efficiency through automated workflows and predictive analytics.
-                    </div>
-                    <div class="item-tags">
-                        <span class="tag">Strategy</span>
-                        <span class="tag">AI Implementation</span>
-                        <span class="tag">Sales Enablement</span>
-                        <span class="tag">Process Optimization</span>
-                    </div>
-                    <a href="#
+        // Smooth scroll activation
+        function updateTimelineProgress() {
+            const entries = document.querySelectorAll('.entry');
+            const batterySegments = document.querySelectorAll('.battery-segment');
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            const triggerBottom = window.innerHeight * 0.75;
+
+            entries.forEach((entry, index) => {
+                const rect = entry.getBoundingClientRect();
+                const isVisible = rect.top < triggerBottom && rect.bottom > 0;
+
+                // Toggle entry active state
+                entry.classList.toggle('active', isVisible);
+
+                // Toggle corresponding battery segment
+                if (batterySegments[index]) {
+                    batterySegments[index].classList.toggle('active', isVisible);
+                }
+            });
+
+            // Hide scroll indicator after scrolling
+            if (window.scrollY > 100) {
+                scrollIndicator.style.opacity = '0';
+            } else {
+                scrollIndicator.style.opacity = '1';
+            }
+        }
+
+        // Resize handler to maintain battery-timeline proportion
+        function handleResize() {Add commentMore actions
+            const timeline = document.querySelector('.timeline');
+            const batteryBody = document.getElementById('batteryBody');
+
+            if (timeline && batteryBody) {
+                const timelineHeight = timeline.offsetHeight;
+                const batteryMinHeight = Math.max(timelineHeight * 0.8, 200);
+                batteryBody.style.height = `${batteryMinHeight}px`;
+            }
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', updateTimelineProgress);
+         window.addEventListener('load', () => {Add commentMore actions
+            initializeBattery();
+            updateTimelineProgress();
+      });Add commentMore actions
+        
+        window.addEventListener('resize', handleResize);
+
+        // Smooth scrolling for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
+                                                
+            
