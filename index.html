@@ -126,17 +126,8 @@
             flex: 1;
         }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: -6px;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            background: #667eea;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
-        }
+        /* Removed the circle at the top */
+        /* .timeline::before - removed */
 
         /* Timeline entry */
         .entry {
@@ -184,6 +175,10 @@
             border-radius: 8px;
             border: 1px solid rgba(102, 126, 234, 0.3);
             white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
         }
 
         .content {
@@ -397,14 +392,14 @@
             <!-- Timeline -->
             <div class="timeline">
                 <div class="entry">
-                    <div class="date">CIBC Mellon</div>
+                    <div class="date">JAN 2025 –</div>
                     <div class="content">
                         <h3>BPM Intern @ Microsoft</h3>
                         <p>AI Adoption | Sales Strategy Enablement</p>
                     </div>
                 </div>
                 <div class="entry">
-                    <div class="date">Microsoft Experience</div>
+                    <div class="date">OCT 2023 – MAY 2024</div>
                     <div class="content">
                         <h3>Fund and Portfolio Services @ CIBC Mellon</h3>
                         <p>Investment operations support, reporting, and reconciliation</p>
