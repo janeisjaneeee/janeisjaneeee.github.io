@@ -108,6 +108,7 @@
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 2px;
+            display: block;
         }
 
         /* Timeline layout */
@@ -218,60 +219,49 @@
             letter-spacing: 1px;
         }
 
+        .battery-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .battery-cap {
-            width: 28px;
-            height: 12px;
-            background: linear-gradient(45deg, #888, #aaa);
-            border-radius: 4px;
-            margin-bottom: 6px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            width: 20px;
+            height: 8px;
+            background: #7a7a7a;
+            border-radius: 3px 3px 0 0;
+            margin-bottom: 0;
+            z-index: 2;
         }
 
         .battery-body {
-            width: 36px;
-            min-height: 200px; /* Fallback minimum height */
-            border: 3px solid #555;
-            border-radius: 8px;
+            width: 32px;
+            min-height: 200px;
+            border: 2px solid #7a7a7a;
+            border-radius: 4px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 6px;
-            background: rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 3px;
+            background: #f0f0f0;
+            gap: 2px;
+            position: relative;
         }
 
         .battery-segment {
             flex: 1;
-            margin: 3px 0;
-            border-radius: 4px;
-            background: rgba(85, 85, 85, 0.3);
-            border: 1px solid #333;
+            border-radius: 2px;
+            background: #e0e0e0;
+            border: none;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            min-height: 20px; /* Minimum segment height */
-        }
-
-        .battery-segment::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, #32cd32, #90ee90);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .battery-segment.active::before {
-            transform: scaleY(1);
+            min-height: 20px;
         }
 
         .battery-segment.active {
-            border-color: #32cd32;
-            box-shadow: 0 0 15px rgba(50, 205, 50, 0.5);
+            background: #4ade80;
+            box-shadow: 0 0 8px rgba(74, 222, 128, 0.3);
         }
 
         /* Scroll indicator */
@@ -395,9 +385,11 @@
             <!-- Battery indicator -->
             <div class="battery">
                 <div class="battery-label">Progress</div>
-                <div class="battery-cap"></div>
-                <div class="battery-body" id="batteryBody">
-                    <!-- Battery segments will be dynamically generated -->
+                <div class="battery-container">
+                    <div class="battery-cap"></div>
+                    <div class="battery-body" id="batteryBody">
+                        <!-- Battery segments will be dynamically generated -->
+                    </div>
                 </div>
             </div>
 
